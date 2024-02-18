@@ -3,11 +3,13 @@ import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import studentRoutes from './routes/studentRoute.js';
 import colors from "colors";
+import { fileURLToPath } from "url";
 
-
+//configure env
+dotenv.config();
 //db config
 connectDB();
-// const __filename = fileURLToPath(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
 //rest object
 const app=express();
 
