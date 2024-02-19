@@ -3,7 +3,8 @@ import axios from 'axios';
 import {useNavigate,useLocation} from 'react-router-dom';
 import {useAuth} from '../context/auth.js';
 import { toast } from 'react-toastify';
-const Login = () => {
+
+const studentLogin = () => {
     
         
     const[email,setEmail]=useState("");
@@ -15,7 +16,7 @@ const Login = () => {
     const handleSubmit= async(event)=>{
         event.preventDefault();
         try {
-            const res= await axios.post('/api/vit/auth/login',{email,password});
+            const res= await axios.post('/api/vit/auth/student/studentLogin',{email,password});
             if(res && res.data.success){
                 toast.success(res.data && res.data.message);
                 setAuth({
@@ -34,7 +35,6 @@ const Login = () => {
         }
         };
 
-
 return (
 <div>
 Hello
@@ -42,4 +42,4 @@ Hello
 )
 };
 
-export default Login;
+export default studentLogin;
