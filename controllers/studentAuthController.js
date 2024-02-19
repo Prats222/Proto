@@ -3,7 +3,7 @@ import JWT from 'jsonwebtoken';
 import { comparePassword, hashPassword } from "../helpers/authHelper.js";
 
 //POST LOGIN
-export const loginController=async(req,res) =>{
+export const studentLoginController=async(req,res) =>{
     try {
        const {email,password} = req.body
        //Validation
