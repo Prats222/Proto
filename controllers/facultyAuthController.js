@@ -21,7 +21,7 @@ export const facultyLoginController=async(req,res) =>{
             message:'Email is not Registered'
         })
        }
-       const match= await comparePassword(password,user.password)
+       const match= await comparePassword(password,faCusers.password)
        if(!match){
         return res.status(404).send({
             success:false,
@@ -30,7 +30,7 @@ export const facultyLoginController=async(req,res) =>{
        }
     
        //token
-       const token = await JWT.sign({ _id: user.id},process.env.JWT_SECRET, {expiresIn:"900d"});
+       const token = await JWT.sign({ _id: faCusers.id},process.env.JWT_SECRET, {expiresIn:"900d"});
     
        res.status(200).send({
         success:true,
