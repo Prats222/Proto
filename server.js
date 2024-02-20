@@ -2,6 +2,7 @@ import express from "express";
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import studentRoutes from './routes/studentRoute.js';
+import facultyRoutes from './routes/facultyRoute.js';
 import colors from "colors";
 import { fileURLToPath } from "url";
 
@@ -18,7 +19,8 @@ const app=express();
 app.use(express.json());
 
 //all routes
-app.use('/api/vit/auth',studentRoutes);
+app.use('/api/vit/auth/student',studentRoutes);
+app.use('/api/vit/auth/faculty',facultyRoutes);
 
 //rest api
 app.get('/',(req,res)=>{

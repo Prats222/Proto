@@ -10,16 +10,16 @@ const studentSchema = new mongoose.Schema({
     type:String,
     required:true
    },
-   skills:{
-      type:String,
+   studentSkills:{
+      type:[String],
       required:true,
    },
    links:{
     type:String,
     required:true,
  },
-   projects:{
-    type:String,
+   studentProjectIds:{
+    type:[Number],
     required:true,
  },
    role: {

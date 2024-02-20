@@ -11,15 +11,15 @@ const facultySchema = new mongoose.Schema({
     type:String,
     required:true
    },
-   project:{
-      type:String,
+   facultySkills:{
+      type:[String],
       required:true,
    },
    domain:{
     type:String,
     required:true,
  },
- projects:{
+ facultyProjectIds:{
     type:String,
     required:true,
  },

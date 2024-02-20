@@ -1,9 +1,9 @@
-import studentModel from "../models/studentModel.js";
+import facultyModel from "../models/facultyModel.js";
 import JWT from 'jsonwebtoken';
 import { comparePassword, hashPassword } from "../helpers/authHelper.js";
 
 //POST LOGIN
-export const studentLoginController=async(req,res) =>{
+export const facultyLoginController=async(req,res) =>{
     try {
        const {email,password} = req.body
        //Validation
@@ -14,14 +14,14 @@ export const studentLoginController=async(req,res) =>{
         })
        }
        //check user
-       const user = await studentModel.findOne({email})
+       const user = await facultyModel.findOne({email})
        if(!user){
         return res.status(404).send({
             success:false,
             message:'Email is not Registered'
         })
        }
-       const match= await comparePassword(password,sTusers.password)
+       const match= await comparePassword(password,faCusers.password)
        if(!match){
         return res.status(404).send({
             success:false,
@@ -30,7 +30,7 @@ export const studentLoginController=async(req,res) =>{
        }
     
        //token
-       const token = await JWT.sign({ _id: sTusers.id},process.env.JWT_SECRET, {expiresIn:"900d"});
+       const token = await JWT.sign({ _id: faCusers.id},process.env.JWT_SECRET, {expiresIn:"900d"});
     
        res.status(200).send({
         success:true,
