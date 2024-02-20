@@ -1,10 +1,12 @@
 import {Routes,Route} from 'react-router-dom'
-import Login from './Auth/Login';
+import StudentLogin from './Auth/studentLogin.js';
+import FacultyLogin from './Auth/facultyLogin.js';
 
 function App() {
   return (
    <Routes>
-   <Route path="/login" element={<Login />}   />
+   <Route path="/student/studentLogin" element={<StudentLogin/>}   />
+   <Route path="/faculty/facultyLogin" element={<FacultyLogin />} />
    </Routes>
   );
 }

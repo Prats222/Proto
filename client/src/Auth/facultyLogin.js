@@ -3,7 +3,7 @@ import axios from 'axios';
 import {useNavigate,useLocation} from 'react-router-dom';
 import {useAuth} from '../context/auth.js';
 import { toast } from 'react-toastify';
-const facultyLogin = () => {
+const FacultyLogin = () => {
     
         
     const[email,setEmail]=useState("");
@@ -42,4 +42,4 @@ Hello
 )
 };
 
-export default facultyLogin;
+export default FacultyLogin;
