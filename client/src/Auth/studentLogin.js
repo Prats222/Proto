@@ -34,9 +34,48 @@ const StudentLogin = () => {
     };
 
     return (
-        <div>
-            Hello
+        <div class="Master">
+        <div class="wrapper">
+            <div class="loginDiv">
+                <div class="blueLine">
+                </div>
+                <p class="loginHeader">Login</p>
+            </div>
+
+            <div class="inputDiv">
+
+                <div class="form">
+                    <form action="">
+                        <div class="inputBox">
+                            <label for="username"></label>
+                            <input type="text" class="inputField" id="username" name="username" placeholder="Username"
+                                required>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="password"></label>
+                            <input type="password" class="inputField" id="password" name="password"
+                                placeholder="password" required>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="submitButton">
+                    <button type="submit" class="Submit" onClick={handleSubmit}>Submit</button>
+                </div>
+            </div>
+
+            <div class="forgot">
+                <div class="forgot-Password">
+                    <a href="#">Forgot Password</a>
+                </div>
+                <div class="forgot-login">
+                    <a href="#">Forgot Login</a>
+                </div>
+            </div>
         </div>
+    </div>
+
     );
 };
 
