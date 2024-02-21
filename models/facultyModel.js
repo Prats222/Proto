@@ -20,7 +20,7 @@ const facultySchema = new mongoose.Schema({
     required:true,
  },
  facultyProjectIds:{
-    type:String,
+    type:[Number],
     required:true,
  },
    role: {
